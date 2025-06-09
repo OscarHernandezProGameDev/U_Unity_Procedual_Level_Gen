@@ -564,6 +564,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 298a49744a825bdedaf02f992ed21220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  width: 64
+  length: 64
+  roomWidthMin: 3
+  roomWidthMax: 5
+  roomLengthMin: 3
+  roomLengthMax: 5
+  levelLayoutDisplay: {fileID: 667875488}
 --- !u!4 &1403977588
 Transform:
   m_ObjectHideFlags: 0
