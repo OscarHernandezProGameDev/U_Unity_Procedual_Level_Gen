@@ -15,8 +15,26 @@ public class Room
     {
         List<Hallway> hallwayCandidates = new List<Hallway>();
 
-        hallwayCandidates.Add(new Hallway(new Vector2Int(0, 0)));
-        hallwayCandidates.Add(new Hallway(new Vector2Int(width, length)));
+        //hallwayCandidates.Add(new Hallway(new Vector2Int(0, 0)));
+        //hallwayCandidates.Add(new Hallway(new Vector2Int(width, length)));
+
+        int top = length - 1;
+        int minX = minDistanceFromEdge;
+        int maxX = width - minDistanceFromEdge;
+        for (int x = minX; x < maxX; x++)
+        {
+            hallwayCandidates.Add(new Hallway(new Vector2Int(x, 0)));
+            hallwayCandidates.Add(new Hallway(new Vector2Int(x, top)));
+        }
+
+        int right = width - 1;
+        int minY = minDistanceFromEdge;
+        int maxY = length - minDistanceFromEdge;
+        for (int y = minY; y < maxY; y++)
+        {
+            hallwayCandidates.Add(new Hallway(new Vector2Int(0, y)));
+            hallwayCandidates.Add(new Hallway(new Vector2Int(right, y)));
+        }
 
         return hallwayCandidates;
     }
